@@ -13,7 +13,8 @@ have() { command -v "$1" >/dev/null 2>&1; }
 case "$(uname -s)" in
   Darwin) os=darwin ;;
   Linux) os=linux ;;
-  *) fail "unsupported OS $(uname -s); download a release manually (Windows: use the .zip)" ;;
+  MINGW* | MSYS* | CYGWIN*) fail "on Windows, run in PowerShell: irm https://raw.githubusercontent.com/$REPO/main/install.ps1 | iex" ;;
+  *) fail "unsupported OS $(uname -s); download a release manually" ;;
 esac
 case "$(uname -m)" in
   x86_64 | amd64) arch=amd64 ;;
