@@ -30,7 +30,11 @@ docker run --rm ghcr.io/testoptim-ai/testoptim-cli version
 
 ```bash
 testoptim auth                        # paste an API token once
+testoptim run --project <id>          # run your tests and list the issues they find
+testoptim run --changed /checkout     # re-test only the pages or flows you changed
 testoptim tunnel --project <id>       # test apps on your private network
 ```
+
+`testoptim run` exits non-zero when the run finds a high or critical issue (`--fail-on` changes the level), so CI jobs and coding agents such as Claude Code, Cursor and Copilot can gate on it.
 
 See [Test apps on a private network](https://testoptim.ai/docs/integrations/run-tests-on-a-private-network).
