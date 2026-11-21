@@ -35,6 +35,6 @@ testoptim run --changed /checkout     # re-test only the pages or flows you chan
 testoptim tunnel --project <id>       # test apps on your private network
 ```
 
-`testoptim run` exits non-zero when the run finds a high or critical issue (`--fail-on` changes the level), so CI jobs and coding agents such as Claude Code, Cursor and Copilot can gate on it.
+`testoptim run` exits non-zero when the run finds a high or critical issue (`--fail-on` changes the level) or could not test a case, so CI jobs and coding agents such as Claude Code, Cursor and Copilot can gate on it.
 
 See [Test apps on a private network](https://testoptim.ai/docs/integrations/run-tests-on-a-private-network).
